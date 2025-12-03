@@ -4,12 +4,29 @@
   display: flex;
   justify-content: center;
 }
-section {
+.banner {
   background: linear-gradient(180deg, #17e4b9 0%, #091d24 100%);
   display: flex;
   justify-content: center;
 }
 
-section img {
+.banner img {
   max-height: 90%;
+}
+
+.main {
+  background-color: #091d24;
+}
+
+.stack-container {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.tag {
+  background-color: #4a4949;
+  border-radius: 4px;
+  padding: 8px;
+  display: inline-block;
+  margin: 8px 0px;
 }

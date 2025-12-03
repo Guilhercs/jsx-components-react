@@ -1,0 +1,32 @@
+.custom-select {
+  border-radius: 8px;
+  border: 1px solid #4a4949;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #ffffff;
+  padding: 8px 16px;
+}
+
+.custom-select option {
+  background-color: #212121;
+  color: #ffffff;
+}
+.custom-select option:hover {
+  background-color: #4a4949;
+}
+
+.custom-select option:checked {
+  background-color: #17e4b9;
+  color: #000000;
+}
+
+.custom-select::placeholder {
+  color: #4a4949 !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
