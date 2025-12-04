@@ -1,0 +1,9 @@
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: none;
+  max-height: 80px;
+  margin: 0;
+  padding: 8px 0;
+}
