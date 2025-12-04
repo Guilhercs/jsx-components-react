@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./form.css";
 
 import { Card } from "../card";
@@ -8,19 +9,26 @@ import { Title } from "../title";
 import { CustomButtom } from "../button";
 import { CustomSelect } from "../customSelect/index";
 
-export function EventForm(props: { themes: { id: number; name: string }[] }) {
+export function EventForm(props: {
+  themes: { id: number; name: string }[];
+  onSubmit: (event: any) => void;
+}) {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     const data = new FormData(e.currentTarget);
 
-    return {
-      id: crypto.randomUUID(),
-      img: "https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png",
-      date: new Date(),
-      theme: data.get("theme"),
+    const randomId = Math.floor(Math.random() * 15) + 1;
+
+    props.onSubmit({
+      id: 2,
+      img: `https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_${randomId}.png`,
+      date: new Date(data.get("date") as string),
+      theme: props.themes.find(
+        (theme) => theme.id.toString() === data.get("theme")
+      ),
       title: data.get("title"),
-    };
+    });
   }
 
   return (
@@ -31,16 +39,16 @@ export function EventForm(props: { themes: { id: number; name: string }[] }) {
             Preencha para criar um evento:
           </Title>
           <FieldSet>
-            <Label htmlFor="nome">Qual o nome do evento?</Label>
-            <Input type="text" id="nome" placeholder="Summer dev hits" />
+            <Label htmlFor="title">Qual o nome do evento?</Label>
+            <Input type="text" id="title" placeholder="Summer dev hits" />
           </FieldSet>
           <FieldSet>
-            <Label htmlFor="data">Data do evento</Label>
-            <Input type="date" id="data" placeholder="DD/MM/AAAA" />
+            <Label htmlFor="date">Data do evento</Label>
+            <Input type="date" id="date" placeholder="DD/MM/AAAA" />
           </FieldSet>
           <FieldSet>
-            <Label htmlFor="tema">Tema do evento</Label>
-            <CustomSelect item={props.themes} />
+            <Label htmlFor="theme">Tema do evento</Label>
+            <CustomSelect item={props.themes} name="theme" />
           </FieldSet>
           <div className="form-button">
             <CustomButtom type="submit">Criar evento</CustomButtom>

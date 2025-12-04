@@ -1,11 +1,13 @@
 import type React from "react";
 import "./card.css";
+import { useEffect } from "react";
 
 export function Card(props: {
   children: React.ReactNode;
   styles: React.CSSProperties;
   img?: string;
 }) {
+
   return (
     console.log(props.styles),
     (
