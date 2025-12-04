@@ -2,8 +2,8 @@
 import "./form.css";
 
 import { Card } from "../Card";
-import { FieldSet } from "../FieldSet";
 import { Input } from "../Input";
+import { FieldSet } from "../FieldSet";
 import { Label } from "../Label";
 import { Title } from "../Title";
 import { CustomButtom } from "../Button";
