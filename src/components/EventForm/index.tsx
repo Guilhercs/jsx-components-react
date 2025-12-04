@@ -20,6 +20,8 @@ export function EventForm(props: {
 
     const randomId = Math.floor(Math.random() * 15) + 1;
 
+    console.log(data.get("name"));
+
     props.onSubmit({
       id: 2,
       img: `https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_${randomId}.png`,
@@ -27,7 +29,8 @@ export function EventForm(props: {
       theme: props.themes.find(
         (theme) => theme.id.toString() === data.get("theme")
       ),
-      title: data.get("title"),
+      title: data.get("name"),
+      description: data.get("description"),
     });
   }
 
@@ -39,12 +42,26 @@ export function EventForm(props: {
             Preencha para criar um evento:
           </Title>
           <FieldSet>
-            <Label htmlFor="title">Qual o nome do evento?</Label>
-            <Input type="text" id="title" placeholder="Summer dev hits" />
+            <Label htmlFor="name">Qual o nome do evento?</Label>
+            <Input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Summer dev hits"
+            />
+          </FieldSet>
+          <FieldSet>
+            <Label htmlFor="description">Sobre o evento</Label>
+            <Input
+              type="text"
+              id="description"
+              name="description"
+              placeholder="Evento sobre as principais tendências em desenvolvimento web..."
+            />
           </FieldSet>
           <FieldSet>
             <Label htmlFor="date">Data do evento</Label>
-            <Input type="date" id="date" placeholder="DD/MM/AAAA" />
+            <Input type="date" id="date" name="date" placeholder="DD/MM/AAAA" />
           </FieldSet>
           <FieldSet>
             <Label htmlFor="theme">Tema do evento</Label>

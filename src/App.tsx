@@ -22,12 +22,14 @@ function App() {
       date: new Date(),
       theme: themes[0],
       title: "Woman in Tech",
+      description:
+        "Um evento dedicado a celebrar e promover a participação das mulheres na tecnologia.",
     },
   ]);
 
   function addEventWhenSubmitForm(event: any) {
     setEvents((prevEvents) => [...prevEvents, event]);
-    console.log(event);
+    console.log(events);
   }
 
   return (
@@ -67,8 +69,9 @@ function App() {
                           <p style={{ fontSize: "12px", fontWeight: "200" }}>
                             {event.date.toLocaleDateString("pt-BR")}
                           </p>
+
                           <h4>{event.title}</h4>
-                          <p></p>
+                          <p>{event.description}</p>
                         </div>
                       </Card>
                     ))}
