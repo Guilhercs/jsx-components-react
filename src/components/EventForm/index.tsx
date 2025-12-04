@@ -2,7 +2,7 @@
 import "./form.css";
 
 import { Card } from "../Card";
-import { FieldSet } from "../Fieldset";
+import { FieldSet } from "../FieldSet";
 import { Input } from "../Input";
 import { Label } from "../Label";
 import { Title } from "../Title";
