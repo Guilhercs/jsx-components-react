@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import "./form.css";
 
-import { Card } from "../card";
-import { FieldSet } from "../fieldset";
-import { Input } from "../input";
+import { Card } from "../Card";
+import { FieldSet } from "../Fieldset";
+import { Input } from "../Input";
 import { Label } from "../Label";
-import { Title } from "../title";
-import { CustomButtom } from "../button";
-import { CustomSelect } from "../customSelect/index";
+import { Title } from "../Title";
+import { CustomButtom } from "../Button";
+import { CustomSelect } from "../CustomSelect/index";
 
 export function EventForm(props: {
   themes: { id: number; name: string }[];

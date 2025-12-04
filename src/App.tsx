@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import "./App.css";
-import { Card } from "./components/card";
-import { EventForm } from "./components/eventForm";
-import { Theme } from "./components/theme";
+import { Card } from "./components/Card";
+import { EventForm } from "./components/EventForm";
+import { Theme } from "./components/Theme";
 
 const themes = [
   { id: 1, name: "frontend" },
