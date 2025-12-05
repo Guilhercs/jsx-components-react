@@ -36,7 +36,7 @@ export function EventForm(props: {
 
   return (
     <>
-      <Card styles={{ padding: "32px 28px", margin: "64px auto" }}>
+      <Card styles={{ padding: "32px 28px", margin: "64px 24px" }}>
         <form className="form" onSubmit={handleSubmit}>
           <Title className="title-card" as="span">
             Preencha para criar um evento:
