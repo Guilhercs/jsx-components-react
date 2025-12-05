@@ -41,7 +41,9 @@ function App() {
         <section className="banner">
           <img src="/Hero Image com texto_L.png" alt="" />
         </section>
-        <EventForm themes={themes} onSubmit={addEventWhenSubmitForm} />
+        <section className="form-container">
+          <EventForm themes={themes} onSubmit={addEventWhenSubmitForm} />
+        </section>
         {themes.map((theme) => {
           const hasTheme = events.some((event) => event.theme?.id === theme.id);
           if (!hasTheme) {
@@ -50,7 +52,9 @@ function App() {
           return (
             <>
               <section className="stack-container" key={theme.id}>
-                <Theme themes={theme} />
+                <div style={{ marginTop: "8px" }}>
+                  <Theme themes={theme} />
+                </div>
                 <div className="card-list">
                   {events
                     .filter((event) => event.theme?.id === theme.id)
@@ -70,8 +74,10 @@ function App() {
                             {event.date.toLocaleDateString("pt-BR")}
                           </p>
 
-                          <h4>{event.title}</h4>
-                          <p>{event.description}</p>
+                          <h4 className="title" style={{ marginBottom: "8px" }}>
+                            {event.title}
+                          </h4>
+                          <p className="text">{event.description}</p>
                         </div>
                       </Card>
                     ))}
